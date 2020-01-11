@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SAPUI5 Navigation</title>
+		<script
+				id="sap-ui-bootstrap"
+				src="https://openui5.hana.ondemand.com/1.70.0/resources/sap-ui-core.js"
+				data-sap-ui-theme="sap_belize"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-bindingSyntax="complex"
+				data-sap-ui-compatVersion="edge"
+				data-sap-ui-resourceroots='{
+					"demo": "./"
+				}'>
+		</script>
+
+		<script>
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require([
+					"sap/ui/core/ComponentContainer"
+				], function (ComponentContainer) {
+
+					new ComponentContainer({
+						name : 'demo',
+						height : "100%",
+						settings : {
+							id : "demo"
+						}
+					}).placeAt('content');
+				});
+			});
+		</script>
+
+	</head>
+	<body class="sapUiBody sapUiSizeCompact" id="content">
+	</body>
+</html>

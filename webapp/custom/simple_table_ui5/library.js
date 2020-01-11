@@ -1,0 +1,1 @@
+sap.ui.define([		'jquery.sap.global',		'sap/ui/core/library'	],	function(jQuery) {		"use strict";		sap.ui.getCore().initLibrary({			name: 'custom.simple_table_ui5',			version: '1.0.0',			dependencies: ['sap.ui.core'],			types: [],			interfaces: [],			controls: [				'custom.simple_table_ui5.MTable'			],			elements: []		});		return custom.simple_table_ui5;	});

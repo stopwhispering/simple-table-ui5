@@ -1,0 +1,142 @@
+<m:View displayBlock="true" controllerName="demo.controller.Detail" height="100%"
+		xmlns="sap.m"
+		xmlns:u="sap.uxap"
+		xmlns:m="sap.m"
+		xmlns:f="sap.f"
+		xmlns:c="custom.simple_table_ui5">
+
+	<u:ObjectPageLayout id="ObjectPageLayout"
+					 showTitleInHeaderContent="true"
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					isChildPage="true"
+					upperCaseAnchorBar="false">
+				<u:headerTitle>
+					<u:ObjectPageDynamicHeaderTitle>
+						<u:expandedHeading>
+							<m:Title text="{table_metadata>name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</u:expandedHeading>
+
+						<u:snappedHeading>
+							<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+								<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+									<f:Avatar src="sap-icon://table-view" displaySize="S" displayShape="Square"/>
+									<m:Title text="{table_metadata>name}" wrapping="true" class="sapUiTinyMarginEnd"/>
+								</m:FlexBox>
+							</m:FlexBox>
+						</u:snappedHeading>
+
+						<u:navigationActions>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+						</u:navigationActions>
+
+
+					</u:ObjectPageDynamicHeaderTitle>
+				</u:headerTitle>
+
+				<u:headerContent>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+						<f:Avatar src="sap-icon://table-view"
+								  displaySize="L"
+								  displayShape="Square"
+								  class="sapUiTinyMarginEnd">
+						</f:Avatar>
+						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label text="Table Name"/>
+							<m:Text text="{table_metadata>name}"/>
+						</m:VBox>
+						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label text="SQL Dialect"/>
+							<m:Text text="{table_metadata>dialect}"/>
+						</m:VBox>
+						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+							<m:Label text="Columns Count"/>
+							<m:ObjectNumber number="{= ${table_metadata>columns/}.length }" emphasized="false"/>
+						</m:VBox>
+					</m:FlexBox>
+				</u:headerContent>
+
+		<u:sections>
+			
+			<u:ObjectPageSection title="Test">
+				<u:subSections>
+					<u:ObjectPageSubSection>
+						<u:blocks>	
+						
+							<ScrollContainer
+								height="100%"
+								width="100%"
+								vertical="true"
+								horizontal="true"
+								focusable="true">
+							
+								<c:MTable
+								
+								 id="simpleTable"
+									   inset="false"
+									   class="sapFDynamicPageAlignContent"
+									   width="auto"
+									   delete="onDelete"
+									   editable="{settings>/table_editable}"
+									   validateFieldGroup="onValidateFieldGroup"
+
+										 items="{
+													path: 'table_data>rows'									
+												}"
+									   fieldProperties="{
+											path: 'table_metadata>columns'
+											}"	>
+									
+										<!--columns="{-->
+										<!--	path: 'table_metadata>columns'-->
+										<!--	}"		-->
+
+									
+									<c:headerToolbar>
+										<OverflowToolbar>
+											<ToolbarSpacer/>
+											<OverflowToolbarButton type="Transparent" text="Reload" icon="sap-icon://refresh" press="onReload"/>
+											<OverflowToolbarButton type="Transparent" text="Edit Mode" icon="sap-icon://edit" press="onSwitchEditable"/>
+											<OverflowToolbarButton type="Transparent" text="Delete Mode" icon="sap-icon://delete" press="onSwitchDeleteMode"/>
+											<OverflowToolbarButton type="Transparent" text="Add Row" icon="sap-icon://add" press="onAdd"/>
+											<OverflowToolbarButton type="Transparent" text="Save" icon="sap-icon://save" press="onSave"/>
+										</OverflowToolbar>
+									</c:headerToolbar>									
+									
+										<!--<c:columns>-->
+										<!--	<Column width="12em">-->
+										<!--		<Text text="{= ((${table_metadata>primary_key}) ? '*' : '') + ${table_metadata>name} }" />-->
+										<!--	</Column>-->
+										<!--</c:columns>-->
+	
+										<!--<c:items>-->
+											<!--<ColumnListItem-->
+											<!--	id="todo1"-->
+											<!--	cells="{-->
+											<!--		path: 'table_metadata>columns'-->
+											<!--	}" >-->
+											<!--	<cells>-->
+											<!--		<ObjectIdentifier-->
+											<!--			title="{table_metadata>name}" text="{table_metadata>dialect}" />-->
+											<!--		<ObjectNumber-->
+											<!--				number="{= ${table_metadata>columns/}.length }"-->
+											<!--				unit="" />-->
+											<!--	</cells>-->
+											<!--</ColumnListItem>-->
+										<!--</c:items>-->
+									
+								</c:MTable>
+								
+							</ScrollContainer>
+						
+						</u:blocks>
+					</u:ObjectPageSubSection>
+				</u:subSections>
+			</u:ObjectPageSection>						
+
+		</u:sections>
+	</u:ObjectPageLayout>
+</m:View>

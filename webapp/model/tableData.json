@@ -1,0 +1,71 @@
+{
+	"people": {
+		"rows": [{
+			"name": "Frank",
+			"birthdate": "1980-01-01",
+			"profession": "Professor",
+			"height": "178.00",
+			"income": 3100.3,
+			"created_on": "2019-01-01T00:00:00"
+		}, {
+			"name": "Michelle",
+			"birthdate": "1990-03-01",
+			"profession": "Politician",
+			"height": "165.00",
+			"income": 5200.1,
+			"created_on": "2019-01-01T00:00:00"
+		}, {
+			"name": "Mike",
+			"birthdate": "1970-05-20",
+			"profession": "Civil Servant",
+			"height": "175.00",
+			"income": 7820.99,
+			"created_on": "2019-01-01T00:00:00"
+		}, {
+			"name": "Maria",
+			"birthdate": "1985-02-03",
+			"profession": "Programmer",
+			"height": "168.00",
+			"income": 2200.9,
+			"created_on": "2019-01-01T00:00:00"
+		}, {
+			"name": "Angela",
+			"birthdate": "1981-03-03",
+			"profession": "Architect",
+			"height": "175.00",
+			"income": 1359,
+			"created_on": "2019-01-01T00:00:00"
+		}]
+	},
+	"companies": {
+		"rows": [{
+			"id": 1,
+			"name": "CHOAM",
+			"section": "Petrol",
+			"revenue": "1000.00",
+			"employees": 200,
+			"created_on": "1950-01-25T00:00:00"
+		}, {
+			"id": 2,
+			"name": "Acme Corporation",
+			"section": "Explosives",
+			"revenue": "231.46",
+			"employees": 12,
+			"created_on": "1960-04-21T00:00:00"
+		}, {
+			"id": 3,
+			"name": "Soylent Corporation",
+			"section": "Nutrition",
+			"revenue": "3115.53",
+			"employees": 230,
+			"created_on": "1970-02-01T00:00:00"
+		}, {
+			"id": 4,
+			"name": "Tyrell Corporation",
+			"section": "Robotics",
+			"revenue": "590.00",
+			"employees": 40,
+			"created_on": "1985-01-01T00:00:00"
+		}]
+	}
+}

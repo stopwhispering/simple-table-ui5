@@ -1,0 +1,108 @@
+{
+	"TableMetadataCollection": [
+		{
+			"name": "companies",
+			"dialect": "sqlite",
+			"columns": [
+				{
+					"name": "id",
+					"primary_key": true,
+					"nullable": false,
+					"read_only": true,
+					"datatype": "int"
+				},
+				{
+					"name": "name",
+					"primary_key": false,
+					"nullable": false,
+					"read_only": false,
+					"datatype": "str",
+					"length": 24
+				},
+				{
+					"name": "section",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "str",
+					"length": 20
+				},
+				{
+					"name": "revenue",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "decimal",
+					"length": 10,
+					"scale": 2
+				},
+				{
+					"name": "employees",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "int"
+				},
+				{
+					"name": "created_on",
+					"primary_key": false,
+					"nullable": false,
+					"read_only": false,
+					"datatype": "datetime"
+				}
+			]
+		},
+		{
+			"name": "people",
+			"dialect": "sqlite",
+			"columns": [
+				{
+					"name": "name",
+					"primary_key": true,
+					"nullable": false,
+					"read_only": false,
+					"datatype": "str",
+					"length": 12
+				},
+				{
+					"name": "birthdate",
+					"primary_key": true,
+					"nullable": false,
+					"read_only": false,
+					"datatype": "date"
+				},
+				{
+					"name": "profession",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "str",
+					"length": 20
+				},
+				{
+					"name": "height",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "decimal",
+					"length": 10,
+					"scale": 2
+				},
+				{
+					"name": "income",
+					"primary_key": false,
+					"nullable": true,
+					"read_only": false,
+					"datatype": "int"
+				},
+				{
+					"name": "created_on",
+					"primary_key": false,
+					"nullable": false,
+					"read_only": false,
+					"datatype": "datetime"
+				}
+			]
+		}
+	]
+}
